@@ -35,4 +35,14 @@ public class Fakultas {
     public void setNamaFakultas(String namaFakultas) {
         this.namaFakultas = namaFakultas;
     }
+
+    @Override
+    public String toString() {
+        return "Fakultas{" +
+                "id=" + id +
+                ", namaFakultas='" + namaFakultas + '\'' +
+                ", mahasiswa=" + mahasiswa +
+                '}';
+    }
 }
+

@@ -20,6 +20,7 @@ public class Mahasiswa {
     private String alamat;
 
     @OneToMany(
+            mappedBy = "mahasiswa",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
@@ -28,7 +29,6 @@ public class Mahasiswa {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "jurusan_id")
     private Jurusan jurusan;
-
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fakultas_id")
@@ -67,6 +67,14 @@ public class Mahasiswa {
 
     public void setAlamat(String alamat) {
         this.alamat = alamat;
+    }
+
+    public Jurusan getJurusan() {
+        return jurusan;
+    }
+
+    public void setJurusan(Jurusan jurusan) {
+        this.jurusan = jurusan;
     }
 
     @Override

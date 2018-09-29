@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class FakultasController {
+public class FakultasRestController {
     @Autowired
     private FakultasService fakultasService;
 
@@ -26,5 +26,8 @@ public class FakultasController {
         System.out.println(fakultasReqBody.toString());
         return  fakultasService.saveFakultas(fakultasReqBody);
     }
-
+    @DeleteMapping("fakultas/{id}")
+    public void delete(@PathVariable(value = "id") Long id){
+        fakultasService.deleteFakultas(id);
+    }
 }

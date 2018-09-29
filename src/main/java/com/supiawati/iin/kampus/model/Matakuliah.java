@@ -18,6 +18,10 @@ public class Matakuliah {
     @Column(name = "sks")
     private int sks;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mahasiswa_nim")
+    private Mahasiswa mahasiswa;
+
     public long getId() {
         return id;
     }
@@ -40,5 +44,15 @@ public class Matakuliah {
 
     public void setSks(int sks) {
         this.sks = sks;
+    }
+
+    @Override
+    public String toString() {
+        return "Matakuliah{" +
+                "id=" + id +
+                ", namaMatakuliah='" + namaMatakuliah + '\'' +
+                ", sks=" + sks +
+                ", mahasiswa=" + mahasiswa +
+                '}';
     }
 }

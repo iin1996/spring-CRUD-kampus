@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class MatakuliahController {
+public class MatakuliahRestController {
 
     @Autowired
     private MatakuliahService matakuliahService;
@@ -24,5 +24,9 @@ public class MatakuliahController {
     Matakuliah saveMatakuliah(@RequestBody Matakuliah matakuliahReqbody){
         System.out.println(matakuliahReqbody.toString());
         return matakuliahService.saveMatakuliah(matakuliahReqbody);
+    }
+    @DeleteMapping("matakulias/{id}")
+    public void delete(@PathVariable(value = "id") Long id){
+        matakuliahService.deleteMatakuliah(id);
     }
 }

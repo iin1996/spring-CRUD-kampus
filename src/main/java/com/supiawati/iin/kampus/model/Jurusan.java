@@ -35,4 +35,13 @@ public class Jurusan {
     public void setNamaJurusan(String namaJurusan) {
         this.namaJurusan = namaJurusan;
     }
+
+    @Override
+    public String toString() {
+        return "Jurusan{" +
+                "id=" + id +
+                ", namaJurusan='" + namaJurusan + '\'' +
+                ", mahasiswa=" + mahasiswa +
+                '}';
+    }
 }

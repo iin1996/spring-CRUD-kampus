@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class MahasiswaController {
+public class MahasiswaRestController {
 
     @Autowired
     private MahasiswaService mahasiswaService;
@@ -23,7 +23,6 @@ public class MahasiswaController {
     @PostMapping(path = "mahasiswas", produces = "application/json", consumes = "application/json")
     public @ResponseBody
     Mahasiswa saveMahasiswa(@RequestBody Mahasiswa mahasiswaReqBody) {
-        System.out.println(mahasiswaReqBody.toString());
         return  mahasiswaService.saveMahasiswa(mahasiswaReqBody);
     }
 
